@@ -50,5 +50,8 @@ def get_bot_response():
     return chatbot_response(user_text)
 
 
+import os
+
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
